@@ -2,7 +2,7 @@ const router = require('express').Router()
 const test = require('./test')
 const email = require('./email')
 
-const authMiddleware = async (req, res, next) => {
+const authMiddleware = (req, res, next) => {
   const { cookies: { auth = null } } = req
   if (auth) {
     next()
